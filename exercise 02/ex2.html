@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        background-color: #f1f1f1;
+      }
+
+      .container {
+        background-color: #fff;
+        width: fit-content;
+        padding: 30px;
+      }
+
+      .container .title {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+
+      .container form input,
+      .container form select {
+        height: 40px;
+        padding: 10px;
+        margin-right: 10px;
+        font-size: 17px;
+        border: #e1e1e1 solid 2px;
+        border-radius: 5px;
+      }
+
+      .container form select {
+        width: 150px;
+        padding: 5px;
+      }
+
+      .container form #submit-btn {
+        color: #fff;
+        background-color: #007bff;
+        height: 40px;
+        padding: 10px;
+        font-size: 17px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .container table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      .container table thead {
+        background-color: #f4f4f4;
+      }
+
+      .container table tr {
+        width: 100%;
+        border-bottom: 2px solid #e3e3e3;
+      }
+
+      .container table td,
+      .container table th {
+        padding: 10px 0 10px 10px;
+        font-size: 18px;
+        text-align: left;
+      }
+
+      .container table tr td:nth-child(1) {
+        width: 3%;
+      }
+
+      .container table tr td:nth-child(2) {
+        width: 37%;
+        text-align: justify;
+      }
+
+      .container table tr td:nth-child(3),
+      .container table tr td:nth-child(4),
+      .container table tr td:nth-child(5),
+      .container table tr td:nth-child(6) {
+        width: 15%;
+      }
+
+      .container table tr .edit-btn {
+        padding: 5px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #ffc107;
+        border: none;
+        border-radius: 5px;
+        margin-right: 30px;
+        cursor: pointer;
+      }
+
+      .container table tr .delete-btn {
+        padding: 5px;
+        font-size: 15px;
+        color: #fff;
+        background-color: #dc3545;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Task Management</h1>
+      <form action="" id="task-management-form">
+        <input type="text" id="content" placeholder="Content" />
+        <input type="date" id="date" />
+        <select name="Choose status" id="status">
+          <option value="" disabled selected hidden>Choose status</option>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
+        <input type="text" id="username" placeholder="Username" />
+        <button id="submit-btn">Submit</button>
+      </form>
+
+      <table>
+        <thead>
+          <th>#</th>
+          <th>Content</th>
+          <th>Due Date</th>
+          <th>Status</th>
+          <th>Assigned to</th>
+          <th>Action</th>
+        </thead>
+        <tbody id="myTasks"></tbody>
+      </table>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
